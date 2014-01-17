@@ -1,0 +1,12 @@
+{
+    "name": "sound-team",
+    "version": "0.0.1",
+    "dependencies":{
+        "angular": "~1.2.10",
+        "jquery": "~1.10.2",
+        "bootstrap": "~3.0.3"
+    },
+    "devDependencies":{
+        "jasmine": "~2.0.0"
+    }
+}
