@@ -1,8 +1,20 @@
-#appname: sound-team
-#publisher: lucasalves
-#url: https://github.com/lucasalve
-#image: default_app_logo.png
-#appid: sound_team
-#desc: undefined
-#type: desktop
-#guid: 6d48afea-c8eb-436d-bebd-6e5a28ece1ed
+#appname:sound-team
+#appid:sound_team
+#publisher:lucasalves
+#image:default_app_logo.png
+#url:https://github.com/lucasalve
+#guid:6d48afea-c8eb-436d-bebd-6e5a28ece1ed
+#desc:undefined
+#type:desktop
+runtime:1.3.1-beta
+app:1.3.1-beta
+codec:1.3.1-beta
+database:1.3.1-beta
+filesystem:1.3.1-beta
+media:1.3.1-beta
+monkey:1.3.1-beta
+network:1.3.1-beta
+platform:1.3.1-beta
+process:1.3.1-beta
+ui:1.3.1-beta
+worker:1.3.1-beta
