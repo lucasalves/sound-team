@@ -4,8 +4,8 @@
 <id>sound_team</id>
 <name>sound-team</name>
 <version>1.0</version>
-<publisher>lucasalves</publisher>
-<url>https://github.com/lucasalve</url>
+<publisher>Lucas Alves</publisher>
+<url>https://github.com/lucasalves</url>
 <icon>default_app_logo.png</icon>
 <copyright>2014 by lucasalves</copyright>
 <!-- Window Definition - these values can be edited -->
@@ -13,10 +13,10 @@
 <id>initial</id>
 <title>sound-team</title>
 <url>app://index.html</url>
-<width>700</width>
+<width>1024</width>
 <max-width>3000</max-width>
 <min-width>0</min-width>
-<height>500</height>
+<height>800</height>
 <max-height>3000</max-height>
 <min-height>0</min-height>
 <fullscreen>false</fullscreen>
