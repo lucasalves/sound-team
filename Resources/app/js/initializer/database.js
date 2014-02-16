@@ -3,15 +3,14 @@ var DB
         connect: function(name){
             var dbName = name || this._databaseName()
 
-            DB = Ti.Ti.Database.open(dbName);
+            DB = Ti.Database.open(dbName);
             Schema.create();
-            
             return DB;
         },
 
         reconnect: function(){
             return this.connect();
-        }
+        },
 
         _databaseName: function(){
             return Ti.App.getName() + '_' + environment.ENV;
@@ -23,3 +22,6 @@ var DB
             }
         }
     };
+
+//Initialize connection
+Database.connect();
