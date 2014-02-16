@@ -6,7 +6,7 @@ var environment = {
         _prevEnv: '',
         
         setEnv: function(env){
-            if(this.defaultsEnv.indexOf(env) > -1){
+            if(this.defaultsEnv.indexOf(env) > -1 && env !== this.ENV){
                 this._prevEnv = this.ENV;
                 this.ENV = env;
             }
