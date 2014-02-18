@@ -11,6 +11,21 @@
   <script type="text/javascript" src="app://vendor/jasmine/lib/jasmine-core/jasmine-html.js"></script>
   <script type="text/javascript" src="app://vendor/jasmine/lib/jasmine-core/boot.js"></script>
 
+  <!-- include application source files here... -->
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script type="text/javascript" src="vendor/bootstrap/however/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/angular/angular.js"></script>
+
+  <!-- Load js -->
+  <script type="text/javascript" src="app://app/js/initializer/application.js"></script>
+  <script type="text/javascript" src="app://app://app/js/initializer/constants.js"></script>
+  <script type="text/javascript" src="app://app/js/initializer/routes.js"></script>
+  <script type="text/javascript" src="app://app/js/initializer/environment.js"></script>
+  <script type="text/javascript" src="app://app/js/initializer/schema.js"></script>
+  <script type="text/javascript" src="app://app/js/initializer/database.js"></script>
+
+  <!-- set environment for test... -->
+  <script type="text/javascript">environment.setEnv('test');</script>
   <!-- include source files here... -->
   <!-- <script type="text/javascript" src="app://vendor/jasmine/lib/jasmine-core/example/src/Player.js"></script> -->
   <!-- <script type="text/javascript" src="app://vendor/jasmine/lib/jasmine-core/example/src/Song.js"></script> -->
