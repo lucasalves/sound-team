@@ -30,6 +30,7 @@ describe('Menu model', function(){
                 'description': 'Visualize, busque e assista todos o videos disponíveis no sistema',
                 'icon': 'film',
                 'path': '/movie',
+                'component_id': 1
             };
         menu.addItem(item);
         expect( menu.getItems()[0].name ).toEqual(itemName);
