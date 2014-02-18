@@ -17,6 +17,7 @@ app.controller('EnvironmentController', function($scope){
 
     $scope.addEventListener = function(){
         $scope.windowRunnerTest.addEventListener('closed', function(){
+            Database.purge();
             environment.setEnv( environment.getPrevEnv() );
             
             $scope.$apply();
