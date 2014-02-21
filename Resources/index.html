@@ -14,13 +14,24 @@
 	<script type="text/javascript" src="app/js/initializer/schema.js"></script>
 	<script type="text/javascript" src="app/js/initializer/database.js"></script>
 
+	<!-- Models -->
+	<script type="text/javascript" src="app/js/models/Menu.js"></script>
+
 	<!-- Controllers -->
 	<script type="text/javascript" src="app/js/controllers/EnvironmentController.js"></script>
+	<script type="text/javascript" src="app/js/controllers/ApplicationController.js"></script>
+	<script type="text/javascript" src="app/js/controllers/SidebarController.js"></script>
 
 	<!-- Load css -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/however/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="vendor/Font-Awesome/css/font-awesome.min.css">
+	<!-- Load css theme -->
+	<link href='app://vendor/atom-theme/css/font.css' rel='stylesheet' type='text/css'>
+	<link href="app://vendor/atom-theme/css/atom-style.css" rel="stylesheet">	
+	<link href="app://vendor/atom-theme/css/style-responsive.css" rel="stylesheet">	
+	<!-- Load css application -->
 	<link rel="stylesheet" type="text/css" href="app/css/application.css">
 </head>
-<body ng-include src="'app://app/views/default/layout.html'">
+<body ng-include src="'app://app/views/default/layout.html'" ng-controller="ApplicationController">
 </body>
 </html>
