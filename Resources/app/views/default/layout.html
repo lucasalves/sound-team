@@ -1,6 +1,9 @@
-<div class="container">
-	<ng-include src="'app://app/views/default/header.html'"></ng-include>	
+<div id="layout-container">
 	<ng-include src="'app://app/views/default/sidebar.html'"></ng-include>
-    <ng-include src="'app://app/views/default/content.html'"></ng-include>  
+    
+    <div id="main">
+        <ng-include src="'app://app/views/default/header.html'"></ng-include>    
+        <ng-include src="'app://app/views/default/content.html'"></ng-include>  
+    </div>
 	<ng-include src="'app://app/views/default/footer.html'"></ng-include>	
 </div>

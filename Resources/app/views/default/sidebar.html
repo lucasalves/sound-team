@@ -1,3 +1,7 @@
-<div class="col-md-4">
-	Sidebar
-</div>
+<div id="nav" ng-controller="SidebarController" ng-init="init()"> 
+    <!--navigation start-->
+    <ul class="navigation">
+      <li><a class="active" href="index.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+      <li ng-repeat="item in menuItems"><a href="#"><i class="fa fa-{{item.icon}}"></i><span>{{item.name}}</span></a></li>
+    </ul><!--navigation end--> 
+</div><!--Left navbar end--> 

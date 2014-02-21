@@ -20,5 +20,17 @@ time, mark, audio, video {
 }
 
 body{
+    font-family: 'Roboto';
+    font-weight: 300;
 	background-color: #FFF;
+    overflow: hidden;
+}
+
+.component-search{
+    width: 529px;
+    margin-left: 5%;
+}
+.component-search button{
+    padding-left: 22px;
+    padding-right: 22px;
 }

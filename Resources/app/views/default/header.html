@@ -1,1 +1,18 @@
-<header>Header</header>
+<div class="head-title" ng-show="!isDashboard()">
+  <div class="menu-switch"><i class="fa fa-bars"></i></div>  <!--row start-->
+  <div class="row"> 
+    <!--col-md-12 start-->
+    <div class="col-md-12"> 
+      <ul class="component-search pull-left">
+        <li class="hidden-xs">
+            <form action="/search" class="input-group">
+                <input type="text" placeholder="Search" class="form-control page-search">
+                <div class="input-group-btn">
+                    <button class="btn btn-info"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </li>
+      </ul>      
+    </div><!--col-md-12 end--> 
+  </div><!--row end--> 
+</div>
