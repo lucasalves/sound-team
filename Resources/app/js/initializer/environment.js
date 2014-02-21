@@ -19,7 +19,9 @@ var environment = {
         },
 
         execOnChange: function () {
-            Database.reconnect();
+            if(window.Database){
+                Database.reconnect();
+            }
         }
 
 
