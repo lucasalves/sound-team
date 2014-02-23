@@ -1,4 +1,5 @@
-var app = angular.module('soundTeam', []);
+var app = angular.module('soundTeam', ['ngRoute']);
+
 
 (function(){
     if(!Ti.UI.getMainWindow().isMaximized()){
