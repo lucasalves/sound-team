@@ -33,4 +33,5 @@ body{
 .component-search button{
     padding-left: 22px;
     padding-right: 22px;
+    margin-top: 2px;
 }
