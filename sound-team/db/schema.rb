@@ -11,9 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140301154044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "components", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "media", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "legent"
+    t.string   "format"
+    t.integer  "size"
+    t.string   "path"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "component_id"
+    t.integer  "album_id"
+  end
+
+  add_index "media", ["album_id"], name: "index_media_on_album_id", using: :btree
+  add_index "media", ["component_id"], name: "index_media_on_component_id", using: :btree
 
 end
