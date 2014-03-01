@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301154044) do
+ActiveRecord::Schema.define(version: 20140301212419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20140301154044) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_media", force: true do |t|
+    t.integer "category_id"
+    t.integer "media_id"
   end
 
   create_table "components", force: true do |t|
@@ -47,5 +59,37 @@ ActiveRecord::Schema.define(version: 20140301154044) do
 
   add_index "media", ["album_id"], name: "index_media_on_album_id", using: :btree
   add_index "media", ["component_id"], name: "index_media_on_component_id", using: :btree
+
+  create_table "menu_items", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "icon"
+    t.string   "path"
+    t.integer  "menu_id_id"
+    t.integer  "component_id_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menu_items", ["component_id_id"], name: "index_menu_items_on_component_id_id", using: :btree
+  add_index "menu_items", ["menu_id_id"], name: "index_menu_items_on_menu_id_id", using: :btree
+
+  create_table "menus", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "widgets", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "path"
+    t.integer  "order"
+    t.integer  "component_id_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "widgets", ["component_id_id"], name: "index_widgets_on_component_id_id", using: :btree
 
 end
