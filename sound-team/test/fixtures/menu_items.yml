@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  icon: MyString
+  path: MyString
+  menu_id_id: 
+  component_id_id: 
+
+two:
+  name: MyString
+  description: MyText
+  icon: MyString
+  path: MyString
+  menu_id_id: 
+  component_id_id: 
