@@ -11,5 +11,7 @@
  *= require_self
  *= require bootstrap/dist/css/bootstrap
  *= require Font-Awesome/css/font-awesome 
+ *= require atom/css/style-responsive
+ *= require atom/css/atom-style
  *= require_tree .
  */
