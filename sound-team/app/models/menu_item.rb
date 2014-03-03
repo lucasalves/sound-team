@@ -1,4 +1,4 @@
 class MenuItem < ActiveRecord::Base
-  belongs_to :menus
-  belongs_to :components
+  belongs_to :menu
+  belongs_to :component
 end

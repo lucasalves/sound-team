@@ -1,3 +1,3 @@
 class Component < ActiveRecord::Base
-    belongs_to :media
+    has_many :media
 end
