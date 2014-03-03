@@ -5,3 +5,37 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+component_movie = Component.create({name: 'Movies', description: 'Ut sibi fuerat socius sagittis. Ego intervenerit. Vere quia a te nuper iratus occidit illos undecim annorum puer. Deinde, si hoc forte qui fuit imperavit.'})
+p "Created #{component_movie.id}##{component_movie.name}"
+
+component_image = Component.create({name: 'Images', description: 'Blowfish librantur in se quatuor, quinquies maior quam normalis, et quare? Quare id faciam?'})
+p "Created #{component_image.id}##{component_image.name}"
+
+component_music = Component.create({name: 'Songs', description: 'Pergo coctione, et ego, et tu oblivisci Pinkman. Obliviscendum hoc unquam factum. Intelligamus hoc in sola SINGULTO multo aliter atque fructuosa negotium structura. Malo B. Option.'})
+p "Created #{component_music.id}##{component_music.name}"
+
+menu  = Menu.create({name: 'Main Menu'})
+p "Created #{menu.id}##{menu.name}"
+
+menu.menu_items.create([
+                        {
+                            name: 'Movies',
+                            description: 'Suspicio? Bene ... tunc ibimus? Quis uh ... CONEXUS locus his diebus? Quisque semper aliquid videtur, in volutpat mauris. Nolo', 
+                            icon: 'film', 
+                            path: 'media/movies',
+                            component: component_movie
+                        },{
+                            name: 'Images',
+                            description: 'tu oblivisci Pinkman. Obliviscendum.',
+                            icon: 'picture-o',
+                            path: 'media/images',
+                            component: component_image
+                        },{
+                            name: 'Songs',
+                            description: 'Pergo coctione, et ego.',
+                            icon: 'picture-o',
+                            path: 'media/images',
+                            component: component_music
+                        }
+                    ])
