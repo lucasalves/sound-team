@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <div id="layout-container">
+        <%= render partial: 'layouts/default/sidebar' %>
+        <div id="main">
+            <%= render partial: 'layouts/default/header' %>
+            <div cslass="margin-container">
+                <div class="scrollable wrapper">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
