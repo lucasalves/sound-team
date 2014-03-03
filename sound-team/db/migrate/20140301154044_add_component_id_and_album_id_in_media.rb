@@ -1,9 +1,6 @@
 class AddComponentIdAndAlbumIdInMedia < ActiveRecord::Migration
   def change
-    add_column :media, :component_id, :integer
-    add_index  :media, :component_id
-
-    add_column :media, :album_id, :integer
-    add_index  :media, :album_id
+    add_reference :media, :component, index: true
+    add_reference :media, :album, index: true
   end
 end

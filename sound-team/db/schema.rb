@@ -65,14 +65,14 @@ ActiveRecord::Schema.define(version: 20140301212419) do
     t.text     "description"
     t.string   "icon"
     t.string   "path"
-    t.integer  "menu_id_id"
-    t.integer  "component_id_id"
+    t.integer  "menu_id"
+    t.integer  "component_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "menu_items", ["component_id_id"], name: "index_menu_items_on_component_id_id", using: :btree
-  add_index "menu_items", ["menu_id_id"], name: "index_menu_items_on_menu_id_id", using: :btree
+  add_index "menu_items", ["component_id"], name: "index_menu_items_on_component_id", using: :btree
+  add_index "menu_items", ["menu_id"], name: "index_menu_items_on_menu_id", using: :btree
 
   create_table "menus", force: true do |t|
     t.string   "name"
@@ -85,11 +85,11 @@ ActiveRecord::Schema.define(version: 20140301212419) do
     t.text     "description"
     t.string   "path"
     t.integer  "order"
-    t.integer  "component_id_id"
+    t.integer  "component_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "widgets", ["component_id_id"], name: "index_widgets_on_component_id_id", using: :btree
+  add_index "widgets", ["component_id"], name: "index_widgets_on_component_id", using: :btree
 
 end

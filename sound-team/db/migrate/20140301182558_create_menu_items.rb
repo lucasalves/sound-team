@@ -5,8 +5,8 @@ class CreateMenuItems < ActiveRecord::Migration
       t.text :description
       t.string :icon
       t.string :path
-      t.references :menu_id, index: true
-      t.references :component_id, index: true
+      t.references :menu, index: true
+      t.references :component, index: true
 
       t.timestamps
     end

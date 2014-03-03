@@ -5,7 +5,7 @@ class CreateWidgets < ActiveRecord::Migration
       t.text :description
       t.string :path
       t.integer :order
-      t.references :component_id, index: true
+      t.references :component, index: true
 
       t.timestamps
     end
