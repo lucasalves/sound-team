@@ -35,7 +35,7 @@ menu.menu_items.create([
                             name: 'Songs',
                             description: 'Pergo coctione, et ego.',
                             icon: 'music',
-                            path: 'media/images',
+                            path: 'media/songs',
                             component: component_music
                         }
                     ])
