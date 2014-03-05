@@ -1,10 +1,9 @@
-var app = angular.module('soundTeam', []);
-    app.run(function($http, $rootScope){
+var app = angular.module('soundTeam', [])
+
+    .run(function($http, $rootScope){
         var url = location.origin + '/init-data.json';
         
-        $http.get(url)
-             .success(function(data){
-                $rootScope.$emit('init data', data);
+        $http.get(url).success(function(data){
                 $rootScope.$broadcast('init data', data);
              });
     });
