@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require angular/angular
 //= require bootstrap/dist/js/bootstrap
 //= require initializer
