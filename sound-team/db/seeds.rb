@@ -23,19 +23,19 @@ menu.menu_items.create([
                             name: 'Movies',
                             description: 'Suspicio? Bene ... tunc ibimus? Quis uh ... CONEXUS locus his diebus? Quisque semper aliquid videtur, in volutpat mauris. Nolo', 
                             icon: 'film', 
-                            path: 'media/movies',
+                            path: '/media/movies',
                             component: component_movie
                         },{
                             name: 'Images',
                             description: 'tu oblivisci Pinkman. Obliviscendum.',
                             icon: 'picture-o',
-                            path: 'media/images',
+                            path: '/media/images',
                             component: component_image
                         },{
                             name: 'Songs',
                             description: 'Pergo coctione, et ego.',
                             icon: 'music',
-                            path: 'media/songs',
+                            path: '/media/songs',
                             component: component_music
                         }
                     ])
