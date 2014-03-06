@@ -1,4 +1,4 @@
-<div id="nav"  ng-controller="SidebarController"> 
+<div id="nav"> 
   <ul class="navigation">
     <li>
       <a class="<%= menu_item_is_activated?(dashboard_path) %>" href="<%= dashboard_path %>">
@@ -6,11 +6,13 @@
         <span>Dashboard</span>
       </a>
     </li>
-    <li ng-repeat="item in menuItems">
-      <a href="{{item.path}}">
-        <i class="fa fa-{{item.icon}} nav-icon"></i>
-        <span>{{item.name}}</span>
-      </a>
-    </li>
+    <% @sidebar.each do |item| %>
+      <li>
+        <%= link_to(item.path) do %>      
+          <i class="fa fa-<%= item.icon %> nav-icon"></i>        
+          <span><%= item.name %></span>
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </div>
