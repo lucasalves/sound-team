@@ -8,7 +8,7 @@
     </li>
     <% @sidebar.each do |item| %>
       <li>
-        <%= link_to(item.path) do %>      
+        <%= link_to(item.path, :class => menu_item_is_activated?(item.path) ) do %>      
           <i class="fa fa-<%= item.icon %> nav-icon"></i>        
           <span><%= item.name %></span>
         <% end %>
