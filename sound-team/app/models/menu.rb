@@ -1,3 +1,5 @@
 class Menu < ActiveRecord::Base
-    has_many :menu_items
+    has_many :items
+    
+    validates :name, length: { minimum: 4 }, uniqueness: true
 end
