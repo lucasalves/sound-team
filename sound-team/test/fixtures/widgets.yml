@@ -5,11 +5,11 @@ one:
   description: MyText
   path: MyString
   order: 1
-  component_id_id: 
+  component_id: 
 
 two:
   name: MyString
   description: MyText
   path: MyString
   order: 1
-  component_id_id: 
+  component_id: 

@@ -5,13 +5,13 @@ one:
   description: MyText
   icon: MyString
   path: MyString
-  menu_id_id: 
-  component_id_id: 
+  menu_id: 
+  component_id: 
 
 two:
   name: MyString
   description: MyText
   icon: MyString
   path: MyString
-  menu_id_id: 
-  component_id_id: 
+  menu_id: 
+  component_id: 
