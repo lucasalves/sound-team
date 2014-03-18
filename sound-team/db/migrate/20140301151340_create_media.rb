@@ -3,7 +3,7 @@ class CreateMedia < ActiveRecord::Migration
     create_table :media do |t|
       t.string :name
       t.text :description
-      t.text :legent
+      t.text :legend
       t.string :format
       t.integer :size
       t.string :path
