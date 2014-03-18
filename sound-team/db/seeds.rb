@@ -18,24 +18,9 @@ p "Created #{component_music.id}##{component_music.name}"
 menu  = Menu.create({name: 'Main Menu'})
 p "Created #{menu.id}##{menu.name}"
 
-menu.menu_items.create([
-                        {
-                            name: 'Movies',
-                            description: 'Suspicio? Bene ... tunc ibimus? Quis uh ... CONEXUS locus his diebus? Quisque semper aliquid videtur, in volutpat mauris. Nolo', 
-                            icon: 'film', 
-                            path: '/media/movies',
-                            component: component_movie
-                        },{
-                            name: 'Images',
-                            description: 'tu oblivisci Pinkman. Obliviscendum.',
-                            icon: 'picture-o',
-                            path: '/media/images',
-                            component: component_image
-                        },{
-                            name: 'Songs',
-                            description: 'Pergo coctione, et ego.',
-                            icon: 'music',
-                            path: '/media/songs',
-                            component: component_music
-                        }
-                    ])
+item_movie = MenuItem.create({name: 'Movies', description: 'Suspicio? Bene ... tunc ibimus? Quis uh ... CONEXUS locus his diebus? Quisque semper aliquid videtur, in volutpat mauris. Nolo', icon: 'film', path: '/media/movies', component: component_movie, menu: menu})
+p "Created #{item_movie.id}##{item_movie.name}"
+item_image = MenuItem.create({name: 'Images', description: 'tu oblivisci Pinkman. Obliviscendum.', icon: 'picture-o', path: '/media/images', component: component_image, menu: menu})
+p "Created #{item_image.id}##{item_image.name}"
+item_song  = MenuItem.create({name: 'Songs', description: 'Pergo coctione, et ego.', icon: 'music', path: '/media/songs', component: component_music, menu: menu})
+p "Created #{item_song.id}##{item_song.name}"
