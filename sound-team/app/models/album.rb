@@ -1,3 +1,3 @@
-class Album < ActiveRecord::Base
-    belongs_to :media
+class Album < ActiveRecord::Base    
+    has_one :media
 end
