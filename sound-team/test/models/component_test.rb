@@ -6,7 +6,7 @@ class ComponentTest < ActiveSupport::TestCase
     assert component.errors[:name].any?, ":name should be required"
   end
 
-  def create(options)
+  def create(options={})
     Component.create({
       name: "Media Administrator",
       description: "The average administrator allows you to manage all your video data, images and audio"
