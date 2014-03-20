@@ -7,7 +7,7 @@ class CreateMedia < ActiveRecord::Migration
       t.string :format
       t.integer :size
       t.string :path
-      t.string :type
+      t.string :kind
 
       t.timestamps
     end

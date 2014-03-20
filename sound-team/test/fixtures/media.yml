@@ -7,7 +7,7 @@ one:
   format: MyString
   size: 1
   path: MyString
-  type: 
+  kind: 
 
 two:
   name: MyString
@@ -16,4 +16,4 @@ two:
   format: MyString
   size: 1
   path: MyString
-  type: 
+  kind: 

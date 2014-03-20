@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140301212419) do
     t.string   "format"
     t.integer  "size"
     t.string   "path"
-    t.string   "type"
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "component_id"
