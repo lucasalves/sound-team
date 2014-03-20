@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140301212419) do
   create_table "media", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "legent"
+    t.text     "legend"
     t.string   "format"
     t.integer  "size"
     t.string   "path"
