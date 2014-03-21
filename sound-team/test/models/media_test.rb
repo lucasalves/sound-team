@@ -26,6 +26,19 @@ class MediaTest < ActiveSupport::TestCase
     assert media.errors[:kind].any?, ":kind should be required"
   end
 
+  test "should respond to album" do
+    album = create()
+    assert album.respond_to?(:album), "should be respond to reference Album"
+  end
+
+  test "should require album" do
+    album = create(:album => nil)
+    assert album.errors[:album].any?, ":album should be required"
+
+    album = create(:album_id => 1000)
+    assert album.errors[:album].any?, ":album doesn't exist, so it should be required"
+  end
+
   private
     def create(options={})
       Media.create({
