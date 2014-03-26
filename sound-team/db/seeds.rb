@@ -24,3 +24,8 @@ item_image = MenuItem.create({name: 'Images', description: 'tu oblivisci Pinkman
 p "Created #{item_image.id}##{item_image.name}"
 item_song  = MenuItem.create({name: 'Songs', description: 'Pergo coctione, et ego.', icon: 'music', path: '/media/songs', component: component_music, menu: menu})
 p "Created #{item_song.id}##{item_song.name}"
+
+path = File.join(Rails.root, 'db', 'seeds')
+require File.join(path, 'songs')
+require File.join(path, 'movies')
+
