@@ -1,10 +1,5 @@
 class MediaController < ApplicationController
-  def images
-  end
-
-  def songs
-  end
-
-  def movies
+  def index
+    
   end
 end
