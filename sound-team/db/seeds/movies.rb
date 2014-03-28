@@ -1,3 +1,5 @@
+p "seed Movies"
+
 component = Component.where(name: "Movies").first
 album = Album.create({:name => "Adoradores", :date => Date.parse("2014-01-01"), :description => "DVD Adoradores"})
 path  = "public/movies/songs/2014/03/adoradores"
@@ -27,7 +29,7 @@ Todo ser confessará
 Louvado seja o Teu nome
 Teu Santo nome"
 media.format    = 'mp4'
-media.kind      = 'movies'
+media.kind      = 'movie'
 media.path      = "#{path}/teu_santo_nome.mp4"
 media.album     = album
 media.size      = 1592219
