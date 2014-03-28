@@ -39,6 +39,12 @@ class MediaTest < ActiveSupport::TestCase
     assert album.errors[:album].any?, ":album doesn't exist, so it should be required"
   end
 
+  test "normalize names kind" do
+    assert_equal Media.kind_normalize('images'), 'image', "should be return :image"
+    assert_equal Media.kind_normalize('movies'), 'movie', "should be return :movie"
+    assert_equal Media.kind_normalize('songs'),  'song', "should be return :song"
+  end
+
   private
     def create(options={})
       Media.create({
