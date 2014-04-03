@@ -37,6 +37,9 @@ end
 
 gem 'jasmine', :group => [:development, :test]
 
+# Audio and movie stream manipulation
+gem 'streamio-ffmpeg'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
