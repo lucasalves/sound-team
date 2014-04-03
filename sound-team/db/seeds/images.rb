@@ -13,6 +13,7 @@ media.kind      = 'image'
 media.path      = "#{path}/01.jpg"
 media.album     = album
 media.size      = 594167
+media.save
 
 media = Media.new
 media.name      = "02 - Aurora Boreal"
@@ -22,6 +23,7 @@ media.kind      = 'image'
 media.path      = "#{path}/02.jpg"
 media.album     = album
 media.size      = 266735
+media.save
 
 media = Media.new
 media.name      = "03 - Por do Sol"
@@ -31,6 +33,7 @@ media.kind      = 'image'
 media.path      = "#{path}/03.jpg"
 media.album     = album
 media.size      = 755261
+media.save
 
 media = Media.new
 media.name      = "04 - Jardim"
@@ -40,3 +43,4 @@ media.kind      = 'image'
 media.path      = "#{path}/04.jpg"
 media.album     = album
 media.size      = 810105
+media.save

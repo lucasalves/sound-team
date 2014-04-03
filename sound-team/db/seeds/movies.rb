@@ -33,3 +33,4 @@ media.kind      = 'movie'
 media.path      = "#{path}/teu_santo_nome.mp4"
 media.album     = album
 media.size      = 1592219
+media.save

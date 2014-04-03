@@ -16,6 +16,7 @@ media.kind      = 'song'
 media.path      = "#{path}/01_breve_vira.mp3"
 media.album     = album
 media.size      = 1592219
+media.save
 
 #
 
@@ -60,6 +61,7 @@ media.kind      = 'song'
 media.path      = "#{path}/02_por_que_o_pai.mp3"
 media.album     = album
 media.size      = 4661885
+media.save
 
 #
 
@@ -114,6 +116,7 @@ media.kind      = 'song'
 media.path      = "#{path}/03_um_vencedor.mp3"
 media.album     = album
 media.size      = 5474895
+media.save
 
 #
 
@@ -164,6 +167,7 @@ media.kind      = 'song'
 media.path      = "#{path}/04_vou_seguir_a_jesus.mp3"
 media.album     = album
 media.size      = 4275235
+media.save
 
 #
 
@@ -198,6 +202,7 @@ media.kind      = 'song'
 media.path      = "#{path}/05_preciosa_graca_do_amor_de_deus.mp3"
 media.album     = album
 media.size      = 5533415
+media.save
 
 #
 
@@ -245,6 +250,7 @@ media.kind      = 'song'
 media.path      = "#{path}/06_foi_assim.mp3"
 media.album     = album
 media.size      = 3506115
+media.save
 
 #
 
@@ -289,6 +295,7 @@ media.kind      = 'song'
 media.path      = "#{path}/07_eu_te_erguerei.mp3"
 media.album     = album
 media.size      = 5120013
+media.save
 
 #
 
@@ -328,6 +335,7 @@ media.kind      = 'song'
 media.path      = "#{path}/08_encontro_especial.mp3"
 media.album     = album
 media.size      = 4429059
+media.save
 
 #
 
@@ -390,6 +398,7 @@ media.kind      = 'song'
 media.path      = "#{path}/09_joga_no_mar.mp3"
 media.album     = album
 media.size      = 4413175
+media.save
 
 #
 
@@ -455,6 +464,7 @@ media.kind      = 'song'
 media.path      = "#{path}/10_o_milagre_do_amor.mp3"
 media.album     = album
 media.size      = 7082941
+media.save
 
 #
 
@@ -475,3 +485,4 @@ media.kind      = 'song'
 media.path      = "#{path}/11_bencao.mp3"
 media.album     = album
 media.size      = 2059835
+media.save
