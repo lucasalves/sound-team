@@ -45,6 +45,10 @@ class MediaTest < ActiveSupport::TestCase
     assert_equal Media.kind_normalize('songs'),  'song', "should be return :song"
   end
 
+  test "create screenshot of video" do
+    # media = create({})
+  end
+
   private
     def create(options={})
       Media.create({
