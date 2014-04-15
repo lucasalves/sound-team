@@ -46,7 +46,18 @@ class MediaTest < ActiveSupport::TestCase
   end
 
   test "create screenshot of video" do
-    # media = create({})
+    file = Rails.root.join('test', 'fixtures', 'media', 'teu_santo_nome.mp4').to_s
+    media = create({
+      :name => "01 - Teu Santo Nome",
+      :description => "DVD Adoradores",
+      :kind => 'movie',
+      :size => 75000402,
+      :path => file,
+      :format => 'mp4',
+    })
+    
+    assert !media.information[:image][:img_320x180].nil?, "should be created path to :secreenshot_320x180"
+    assert File.exist?(media.information[:image][:img_320x180]), "should be created file screenshot"
   end
 
   private
