@@ -2,7 +2,7 @@ p "seed Songs"
 
 component = Component.where(name: "Songs").first
 album = Album.create({:name => "Porque ó Pai ?", :date => Date.parse("2002-01-01"), :description => "Arautos do Rei - Porque ó Pai ?"})
-path  = "public/media/songs/2014/03/por_que_o_pai"
+path  = "public/media/songs/2014/04/por_que_o_pai"
 
 media = Media.new
 media.name      = "01 - Breve Virá"

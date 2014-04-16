@@ -2,7 +2,7 @@ p "seed Movies"
 
 component = Component.where(name: "Movies").first
 album = Album.create({:name => "Adoradores", :date => Date.parse("2014-01-01"), :description => "DVD Adoradores"})
-path  = "public/movies/songs/2014/03/adoradores"
+path  = "public/media/movies/2014/04/adoradores"
 
 'Teu Santo Nome - DVD Adoradores'
 

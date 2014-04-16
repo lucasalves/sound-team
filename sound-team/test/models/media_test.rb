@@ -40,13 +40,13 @@ class MediaTest < ActiveSupport::TestCase
   end
 
   test "normalize names kind" do
-    assert_equal Media.kind_normalize('images'), 'image', "should be return :image"
-    assert_equal Media.kind_normalize('movies'), 'movie', "should be return :movie"
-    assert_equal Media.kind_normalize('songs'),  'song', "should be return :song"
+    assert_equal Media.kind_normalize('images'), {:kind => 'image'}, "should be return :image"
+    assert_equal Media.kind_normalize('movies'), {:kind => 'movie'}, "should be return :movie"
+    assert_equal Media.kind_normalize('songs'),  {:kind => 'song'}, "should be return :song"
   end
 
   test "create screenshot of video" do
-    file = Rails.root.join('test', 'fixtures', 'media', 'teu_santo_nome.mp4').to_s
+    file = File.join('test', 'fixtures', 'media', 'teu_santo_nome.mp4').to_s
     media = create({
       :name => "01 - Teu Santo Nome",
       :description => "DVD Adoradores",
@@ -57,7 +57,7 @@ class MediaTest < ActiveSupport::TestCase
     })
     
     assert !media.information[:image][:img_320x180].nil?, "should be created path to :secreenshot_320x180"
-    assert File.exist?(media.information[:image][:img_320x180]), "should be created file screenshot"
+    assert File.exist?( Rails.root.join("public", media.information[:image][:img_320x180]) ), "should be created file screenshot"
   end
 
   private
