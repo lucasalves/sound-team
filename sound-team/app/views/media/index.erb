@@ -1,1 +1,12 @@
-<h1>Media <%= request.params[:kind] %></h1>
+<div class="row media">
+    <div class="col-md-12">
+        <div class="page-heading">
+          <h1>Media</h1>
+        </div>
+    </div>
+    <ul>
+      <% @media.each do |item| %>
+        <li class="col-lg-2 item item-<%= item.kind %>"><%= render partial: item.kind, :locals => {item: item} %></li>
+      <% end %>
+    </ul>
+</div>

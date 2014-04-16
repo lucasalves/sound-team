@@ -1,0 +1,6 @@
+.media ul li.item{
+    list-style: none;
+}
+.media .item img{
+    width: 100%;
+}
