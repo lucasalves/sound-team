@@ -21,17 +21,17 @@ class MenuTest < ActiveSupport::TestCase
   end
 
   test "should deny duplicate user" do
-      menu = create
-      assert menu.valid?
+    menu = create
+    assert menu.valid?
 
-      menu = create
-      assert menu.invalid?, "Menu should not be created"
+    menu = create
+    assert menu.invalid?, "Menu should not be created"
   end
 
   private 
     def create(options={})
-        Menu.create({
-            :name => 'Main Menu'
-        }.merge(options))
+      Menu.create({
+        :name => 'Main Menu'
+      }.merge(options))
     end
 end
