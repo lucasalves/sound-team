@@ -2,7 +2,7 @@ p "seed Images"
 
 component = Component.where(name: "Images").first
 album = Album.create({:name => "World", :date => Date.parse("2014-01-01"), :description => "Album World"})
-path  = "public/media/images/2014/03/images/world"
+path  = "public/media/images/2014/03/world"
 
 
 media = Media.new

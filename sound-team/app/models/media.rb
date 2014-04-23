@@ -19,25 +19,39 @@ class Media < ActiveRecord::Base
         when 'images' then 'image'
         when 'movies' then 'movie'
         else kind
-      end
+      end 
 
       {:kind => kind}
     end
 
     private
       def create_screenshot
-        return case self.kind
+        case self.kind
         when 'movie'
           create_screenshot_of_movie
+        when 'image'
+          create_thumbnail
         end
+      end
 
+      def create_thumbnail
+        require 'RMagick'
+
+        uri  = File.join('upload', 'screenshots', Digest::MD5.hexdigest(self.path + Time.now.to_s) + "." + self.format)
+        path = Rails.root.join('public', uri).to_s
+        
+        image = Magick::Image.read(self.path).first
+        thumb = image.resize(320, 180)
+        thumb.write(path)
+
+        self.information = { :image => {:img_320x180 => File.join("/", uri)} }
       end
 
       def create_screenshot_of_movie
         require 'digest/md5'
         require 'streamio-ffmpeg'
 
-        uri  = File.join('upload', 'screenshots', Digest::MD5.hexdigest(Time.to_s) + '.png')
+        uri  = File.join('upload', 'screenshots', Digest::MD5.hexdigest(self.path + Time.now.to_s) + '.png')
         path = Rails.root.join('public', uri).to_s
 
         self.information = { :image => {:img_320x180 => File.join("/", uri)} }

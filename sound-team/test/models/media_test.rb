@@ -57,7 +57,22 @@ class MediaTest < ActiveSupport::TestCase
     })
     
     assert !media.information[:image][:img_320x180].nil?, "should be created path to :secreenshot_320x180"
-    assert File.exist?( Rails.root.join("public", media.information[:image][:img_320x180]) ), "should be created file screenshot"
+    assert File.exist?( File.join(Rails.root, "public", media.information[:image][:img_320x180]) ), "should be created file screenshot"
+  end
+
+  test "create thumbnail" do
+    file = File.join('test', 'fixtures', 'media', '01.jpg').to_s
+    media = create({
+      :name => "01",
+      :description => "image 01",
+      :kind => 'image',
+      :size => 594167,
+      :path => file,
+      :format => 'jpg',
+    })
+    
+    assert !media.information[:image][:img_320x180].nil?, "should be created path to :secreenshot_320x180"
+    assert File.exist?( File.join(Rails.root, "public", media.information[:image][:img_320x180]) ), "should be created file screenshot"
   end
 
   private
