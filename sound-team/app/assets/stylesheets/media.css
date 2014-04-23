@@ -1,6 +1,8 @@
-.media ul li.item{
-    list-style: none;
+.media ul li.item   {
+  list-style: none;
+  margin-bottom: 20px;
+  height: 200px;
 }
 .media .item img{
-    width: 100%;
+  width: 100%;
 }
