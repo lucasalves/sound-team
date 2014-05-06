@@ -39,14 +39,14 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 100%;
 	position: relative;
 }
-#nav {
+/*#nav {
 	float: left;
 	width: 100px;
 /*	min-height: 800px;*/
 	/*background: #1e293d;*/
 	/*color: #465269;*/
-	position: absolute;
-}
+	/*position: absolute;*/
+/*}*/
 .profile {
 	overflow: hidden;
 	position: relative;
@@ -80,7 +80,7 @@ ul.navigation > li.separator div {
 	width: 4px;
 }
 ul.navigation > li > a {
-	display: block;
+/*	display: block;
 	outline: medium none;
 	overflow: hidden;
 	padding: 0 5px;
@@ -90,7 +90,7 @@ ul.navigation > li > a {
 	transition: color 0.1s linear 0s;
 	white-space: nowrap;
 	color: #CCC;
-	border-bottom: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;*/
 }
 ul.navigation > li > a:hover,
 ul.navigation > li > a.active {
@@ -98,11 +98,11 @@ ul.navigation > li > a.active {
 	color: #FFF;
 }
 ul.navigation > li > a > i {
-	display: block;
+/*	display: block;
 	font-size: 28px;
 	height: 30px;
 	line-height: 30px;
-	margin: 10px 0;
+	margin: 10px 0;*/
 }
 ul.navigation > li > a > span {
 	display: block;
@@ -188,13 +188,13 @@ ul.navigation span.number-alert {
 	margin-right: 20px;
 }
 #main {
-	min-height: 100%;
+	/*min-height: 100%;
 	position: relative;
 	right: 0;
 	top: 0;
 	z-index: 20;
 	background-color: #FFF;
-	border-left: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;*/
 }
 .margin-container {
 	overflow: hidden;

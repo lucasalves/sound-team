@@ -1,16 +1,14 @@
-<div id="nav"> 
+<div id="nav" class="col-md-2"> 
   <ul class="navigation">
     <li>
       <a class="<%= menu_item_is_activated?(dashboard_path) %>" href="<%= dashboard_path %>">
-        <i class="fa fa-home"></i>
-        <span>Dashboard</span>
+        <i class="fa fa-home"></i>Dashboard
       </a>
     </li>
     <% @sidebar.each do |item| %>
       <li>
         <%= link_to(item.path, :class => menu_item_is_activated?(item.path) ) do %>      
-          <i class="fa fa-<%= item.icon %> nav-icon"></i>        
-          <span><%= item.name %></span>
+          <i class="fa fa-<%= item.icon %> nav-icon"></i><%= item.name %>
         <% end %>
       </li>
     <% end %>

@@ -8,15 +8,16 @@
 </head>
 <body>
     <div id="layout-container">
-        <%= render partial: 'layouts/default/sidebar' %>
-        <div id="main">
-            <%= render partial: 'layouts/default/header' %>
-            <div cslass="margin-container">
-                <div class="scrollable wrapper">
-                    <%= yield %>
-                </div>
-            </div>
-        </div>
+    
+    <div class="row">
+      <%= render partial: 'layouts/default/header' %>        
+    </div>  
+    <div id="main" class="row">
+      <%= render partial: 'layouts/default/sidebar' %>
+          
+      <div class="col-md-8 main-content">
+        <%= yield %>
+      </div>
     </div>
 </body>
 </html>

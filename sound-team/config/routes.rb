@@ -5,6 +5,8 @@ SoundTeam::Application.routes.draw do
   get "media/:kind" => 'media#index', as: :media, constraints: { kind: /images|movies|songs/ }
   get "medias"      => 'media#index'
 
+  resources :media
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

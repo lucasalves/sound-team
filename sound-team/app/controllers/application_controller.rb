@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :display_layout?, :init_data
 
+  respond_to :html, :json
+
   def display_layout?
     if request.xhr?
         render layout: false

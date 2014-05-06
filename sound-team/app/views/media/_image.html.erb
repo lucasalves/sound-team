@@ -1,4 +1,4 @@
 <div class="media-item" id="media-item-<%= item.id %>">
-    <%= screenshot(item) %>
-    <h3><%= item.name %></h3>
+    <%= link_to(screenshot(item), item) %>
+    <h3><%= link_to(item.name, item) %></h3>
 </div>
