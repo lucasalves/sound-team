@@ -1,3 +1,16 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on('ready page:load', function(){
+  var Media = function(html){
+    this.html = $(html);
+    this.addEventListener();
+  };
+
+  Media.prototype.addEventListener = function() {
+    this.html.find('.item').hover(function(){
+      $(this).addClass('on-set');      
+    }, function(){
+      $(this).removeClass('on-set');
+    });
+  };
+
+  window.Media = new Media('.media');
+});

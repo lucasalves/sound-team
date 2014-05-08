@@ -3,6 +3,9 @@
   margin-bottom: 20px;
   height: 200px;
 }
+.media-item{
+  position: relative
+}
 .media .item img{
   width: 100%;
 }
@@ -11,4 +14,43 @@
   font-size: 15px;
   margin-top: 5px;
   line-height: 20px;
+}
+
+.item .time, .item .size{
+  font-family: 'Roboto';
+  font-size: 11px;
+  font-weight: 100;
+  position: absolute;
+  top: 81px;
+  right: 3px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #FFF;
+  padding: 0 4px;
+}
+
+.item.on-set .time, .item.on-set .size{
+  display: none;
+}
+.item .actions-btns{
+  display: none;
+  position: absolute;
+  top: 75px;
+  right: 0px;
+  width: 50px;
+}
+.actions-btns span{
+  cursor: pointer;
+}
+.item.on-set .actions-btns{
+  display: block;
+}
+
+.item .tooltip{
+  width: 113px;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+.media .screenshot{
+  padding-left: 0;
 }

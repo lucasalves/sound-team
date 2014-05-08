@@ -17,3 +17,8 @@
 //= require bootstrap/dist/js/bootstrap
 //= require initializer
 //= require_tree .
+
+
+$(document).on('ready page:load', function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});

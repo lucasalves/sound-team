@@ -16,4 +16,16 @@ module MediaHelper
     end
     screenshot(media, options)
   end
+
+  def dimensions(media)
+    if !media.information.nil? && !media.information[:dimensions].nil?
+      return media.information[:dimensions][:width].to_s + " x " + media.information[:dimensions][:height].to_s
+    end
+  end
+
+  def duration(media)
+    if !media.information.nil? && !media.information[:duration].nil?
+      return media.information[:duration]
+    end
+  end
 end

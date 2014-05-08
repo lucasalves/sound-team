@@ -1,4 +1,6 @@
   <div class="media-item" id="media-item-<%= item.id %>">
     <%= link_to(screenshot_by_kind(item), item) %>
     <h3><%= link_to(item.name, item) %></h3>
+    <span class="time"><%= dimensions(item) %></span>
+    <%= render :partial => "buttons", :locals => {:item => item, :size => "xs"} %>
 </div>

@@ -19,9 +19,11 @@ h1, h2, h3, h4, h5, h6{
   left: 260px;
   height: auto;
   position: absolute;
-  top: 15px;
+  top: 0;
   background-color: #FFFFFF;
   box-shadow: rgba(0, 0, 0, 0.098039) 0px 1px 2px 0px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 #nav.col-md-2{
@@ -65,4 +67,10 @@ ul.navigation > li > a:hover{
   text-decoration: none;
   background: rgba(0,74,120,.95);
   color: #FFF; 
+}
+
+p {
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 16px;
 }
