@@ -16,6 +16,9 @@
 //= require angular/angular
 //= require bootstrap/dist/js/bootstrap
 //= require initializer
+//= require ./utils/Request
+//= require ./utils/Utils
+//= require live-screen/liver-screen
 //= require_tree .
 
 
@@ -24,5 +27,4 @@ $(document).on('ready page:load', function(){
 });
 
 (function(){
-  var app = 
 }());

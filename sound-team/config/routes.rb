@@ -5,6 +5,9 @@ SoundTeam::Application.routes.draw do
   get "media/:kind" => 'media#index', as: :media, constraints: { kind: /images|movies|songs/ }
   get "medias"      => 'media#index'
 
+  get "live-screen"        => 'live_screen#index'
+  get "live-screen/helper" => 'live_screen#helper'
+
   resources :media
   resources :timeline
 
