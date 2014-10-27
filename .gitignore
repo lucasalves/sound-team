@@ -5,3 +5,6 @@ sound-team/public/upload/
 sound-team/sound-team/vendor/assets/components/
 sound-team/sound-team/public/media/
 sound-team/sound-team/public/upload/
+.vagrant/machines/default/virtualbox/synced_folders
+
+.vagrant/machines/default/virtualbox/action_provision

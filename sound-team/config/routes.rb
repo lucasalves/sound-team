@@ -6,6 +6,7 @@ SoundTeam::Application.routes.draw do
   get "medias"      => 'media#index'
 
   resources :media
+  resources :timeline
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
