@@ -6,7 +6,7 @@
     </div>
     <ul>
       <% @media.each do |item| %>      
-        <li class="col-lg-2 item item-<%= item.kind %>"><%= render partial: item.kind, :locals => {item: item} %></li>
+        <li class="col-lg-2 item item-<%= item.kind %>" data-media="<%= item.to_json %>"><%= render partial: item.kind, :locals => {item: item} %></li>
       <% end %>
     </ul>
 </div>

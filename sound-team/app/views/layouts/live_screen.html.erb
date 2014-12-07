@@ -3,11 +3,14 @@
 <head>
   <title>SoundTeam</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+  <%= javascript_include_tag "http://localhost:1337/socket.io/socket.io.js" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div id="layout_live-screen">    
+    <div id="layout_live-screen">
+
+      <%= render :partial => 'layouts/live_screen/loader' %>  
     </div>
 </body>
 </html>

@@ -19,6 +19,7 @@
 //= require ./utils/Request
 //= require ./utils/Utils
 //= require live-screen/liver-screen
+//= require emitter/emitter
 //= require_tree .
 
 
@@ -26,5 +27,5 @@ $(document).on('ready page:load', function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
 
-(function(){
-}());
+//Exists element
+jQuery.fn.exists = function(){ return $(this).length > 0; };

@@ -8,3 +8,6 @@ sound-team/sound-team/public/upload/
 .vagrant/machines/default/virtualbox/synced_folders
 
 .vagrant/machines/default/virtualbox/action_provision
+
+sound-team-realtime/node_modules/
+*.DS_Store

@@ -26,6 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 5432, host: 5432    # postgresql
   config.vm.network :forwarded_port, guest: 9200, host: 9200    # elasticsearch
   config.vm.network :forwarded_port, guest: 80,   host: 8080    # ngnix
+  config.vm.network :forwarded_port, guest: 1337, host: 1337    # sails
 
 
   # Create a private network, which allows host-only access to the machine

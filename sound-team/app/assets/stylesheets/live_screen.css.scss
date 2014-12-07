@@ -32,3 +32,22 @@
   padding: 0 10px;
   border-radius: 5px;
 }
+
+.media-player{
+  width: 100%;
+  height: 100%;
+}
+
+#image.media-player{
+  background-size: cover;
+}
+
+#loader{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+#loader h1{
+  color: #FFFFFF;
+}
