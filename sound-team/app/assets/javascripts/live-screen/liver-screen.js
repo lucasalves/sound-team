@@ -1,5 +1,5 @@
 (function(){
-  'use strict';
+  // 'use strict';
 
   var LiveScreen = LiveScreen || {};
 
@@ -17,10 +17,11 @@
       this.emitter
     );
 
-    // this.manager = new LiveScreen.Manager(
-    //   this.html,
-    //   this.emitter
-    // );
+    this.manager = new LiveScreen.Manager({
+      html: this.html,
+      emitter: this.emitter,
+      app: app
+    });
   };
 
   window.LiveScreen = LiveScreen;
