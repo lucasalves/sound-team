@@ -22,7 +22,7 @@ $(document).on('ready page:load', function(){
   };
 
   Media.prototype.playNow = function(that){
-    var data = $(that).closest('li').data('media');
+    var data = $(that).closest('.item').data('media');
     this.socket.emit('play now', data);
   };
 

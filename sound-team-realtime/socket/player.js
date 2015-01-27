@@ -8,7 +8,6 @@ var Player = function (io) {
         });
 
         socket.on('sync', function(){
-          console.log('hii');
           socket.emit('sync', model.running());
         });
 

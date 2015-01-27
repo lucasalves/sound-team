@@ -1,12 +1,13 @@
+<% title 'Media' %>
+
 <div class="row media">
-    <div class="col-md-12">
-        <div class="page-heading">
-          <h1>Media</h1>
-        </div>
+  <% @media.each do |item| %>    
+    <div class="item item-<%= item.kind %> col-md-3 col-lg-3" data-media="<%= item.to_json %>">
+      <div class="panel panel-plan">
+          <div class="pad-all text-center">
+            <%= render partial: item.kind, :locals => {item: item} %>
+          </div>
+      </div>
     </div>
-    <ul>
-      <% @media.each do |item| %>      
-        <li class="col-lg-2 item item-<%= item.kind %>" data-media="<%= item.to_json %>"><%= render partial: item.kind, :locals => {item: item} %></li>
-      <% end %>
-    </ul>
+  <% end %>
 </div>

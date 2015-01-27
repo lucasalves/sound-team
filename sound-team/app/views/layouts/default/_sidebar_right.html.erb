@@ -1,0 +1,84 @@
+<aside id="aside-container" ng-controller="TimelineController">
+  <div id="aside">
+    <div class="nano">
+      <div class="nano-content" tabindex="0">
+
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active">
+            <a href="#timeline" data-toggle="tab">
+              <i class="fa fa-filter"></i>
+              <span class="badge badge-info">7</span>
+            </a>
+          </li>
+          <li>
+            <a href="#timeline-played" data-toggle="tab">
+              <i class="fa fa-play"></i>
+              <span class="badge badge-warning">2</span>
+            </a>
+          </li>
+          <li>
+            <a href="#timeline-settings" data-toggle="tab">
+              <i class="fa fa-cogs"></i>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="timeline-player" ng-controller="TimelinePlayer">
+            <div class="col-md-12">
+              <div class="pull-left media-info">
+                <div class="media-image">
+                  <img class="" ng-src="/upload/screenshots/bc4c589d15245638e20824f9b443c02a.jpg" alt="Profile Picture" src="/upload/screenshots/bc4c589d15245638e20824f9b443c02a.jpg">
+                </div>
+                <div class="media-type text-center">
+                  <i class="fa fa-song"></i>
+                </div>
+              </div>
+              <div class="pull-left media-play text-center">
+                <h4>01 - Breve Virá</h4>
+                <span class="album">CD Adoradores</span>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <hr/>
+          <div class="tab-pane fade in active" id="timeline">
+            <h4 class="pad-hor text-thin">
+              Timeline
+            </h4>
+
+            <div class="list-group bg-trans" ng-repeat="item in items">
+              <a href="#" class="list-group-item">
+                <div class="media-left" ng-if="image(item)">
+                  <img class="img-circle img-xs" ng-src='{{image(item)}}' alt="Profile Picture">
+                </div>
+                <div class="media-left media-icon" ng-hide="image(item)">
+                  <i class="fa fa-{{item.kind}} btn-purple"></i>
+                </div>
+                <div class="media-body">
+                  <div class="text-lg">{{item.name}}</div>
+                  <span class="text-muted"><i class="fa fa-{{item.kind}}"></i></span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="tab-pane fade" id="timeline-played">
+
+            <div class="pad-all">
+              <h4 class="pad-hor text-thin">Reproduzidos</h4>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="timeline-settings">
+
+            <div class="pad-all">
+              <h4 class="pad-hor text-thin">Settings</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

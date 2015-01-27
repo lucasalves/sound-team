@@ -12,14 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require angular/angular
-//= require bootstrap/dist/js/bootstrap
+//= require nifty/js/bootstrap.min
+//= require nifty/plugins/pace/pace.min
 //= require initializer
 //= require ./utils/Request
 //= require ./utils/Utils
 //= require live-screen/liver-screen
 //= require emitter/emitter
+//= require videojs/dist/video-js/video
 //= require_tree .
 
 

@@ -1,0 +1,62 @@
+<nav id="mainnav-container">
+  <div id="mainnav">
+
+    <div id="mainnav-menu-wrap">
+      <div class="nano">
+        <div class="nano-content" tabindex="0">
+          <ul id="mainnav-menu" class="list-group">
+
+            <li class="list-header">Menu Principal</li>
+
+            <li class="<%= menu_item_is_activated?(dashboard_path) %>">
+              <%= link_to(dashboard_path) do %>
+                <i class="fa fa-dashboard"></i>
+                <span class="menu-title">
+                  <strong>Dashboard</strong>
+                </span>
+              <% end %>
+            </li>
+
+            <li>
+              <a href="#">
+                <i class="fa fa-play-circle-o"></i>
+                <span class="menu-title">
+                  <strong>Medias</strong>
+                </span>
+                <i class="fa arrow"></i>
+              </a>
+
+              <ul class="collapse">
+                <% @sidebar.each do |item| %>
+                  <li>
+                    <%= link_to(item.path, :class => menu_item_is_activated?(item.path) ) do %>      
+                      <i class="fa fa-<%= item.icon %> nav-icon"></i> <%= item.name %>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+      
+            <li class="list-divider"></li>
+      
+            <!--Category name-->
+            <li class="list-header">Componentes</li>
+            <li>
+              <%= link_to('/timeline', :class => menu_item_is_activated?('/timeline') ) do %>      
+                <i class="fa fa-filter"></i>
+                <span class="menu-title">
+                  <strong>Timeline</strong>
+                  <span class="pull-right badge badge-success">new</span>
+                </span>
+              <% end %>
+            </li>
+          </ul>
+
+        </div>
+        <div class="nano-pane" style="display: none;">
+          <div class="nano-slider" style="height: 20px; transform: translate(0px, 0px);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

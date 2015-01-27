@@ -3,7 +3,7 @@
     this.html = html;
   };
 
-  LiveScreen.PlayerMovie.prototype.set = function(data){
+  LiveScreen.PlayerSong.prototype.set = function(data){
     console.log('todo song');
   };
 }(LiveScreen));

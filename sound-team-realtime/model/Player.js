@@ -6,6 +6,12 @@ var Player = {
       this.lastExecution = set;
     }
     return this.lastExecution;
+  },
+
+  _mediaRange: [],
+
+  updateMediaRange: function(range){
+    this._mediaRange = range;
   }
 };
 

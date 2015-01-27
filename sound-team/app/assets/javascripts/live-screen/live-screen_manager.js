@@ -4,8 +4,6 @@
     this.app     = options.app;
     this.emitter = options.emitter;
 
-    this.emitter.emit('show loader');
-
     this.conn   = new LiveScreen.Connection(this.app.player);
     this.player = new LiveScreen.Player(this.html, this.emitter);
     this.sync   = new LiveScreen.Sync(this.conn, this.emitter);

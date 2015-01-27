@@ -1,23 +1,36 @@
 (function(LiveScreen){
   LiveScreen.PlayerImage = function(html, emitter){
-    this.html    = html;
+    this.html    = html.find('.media-player');
     this.emitter = emitter;
   };
 
   LiveScreen.PlayerImage.prototype.set = function(data){
     this.setView('image');
-    this.view.css('background-image', 'url(' + this.url(data.path) + ')');
+    this.load(data);
+  };
 
-    this.emitter.emit('hide loader');
+  LiveScreen.PlayerImage.prototype.load = function(media){
+    this.emitter.emit('show loader');
+
+    var url  = this.url(media.path),
+        self = this;
+
+    $('<img/>').attr('src', url).load(function(){ $(this).remove();
+      self.change(url);
+      self.emitter.emit('hide loader');
+    });
+  };
+
+  LiveScreen.PlayerImage.prototype.change = function(url){
+    var self = this;
+    this.html.fadeOut(300, function(){
+      self.html.css('background-image', 'url(' + url + ')');
+      self.html.fadeIn(300);
+    });
   };
 
   LiveScreen.PlayerImage.prototype.setView = function(type){
-    var element = $('<div>');
-    element.attr('id', type);
-    element.attr('class', 'media-player');
-
-    this.html.html(element);
-    this.view = $('#' + type);
+    this.html.attr('id', type);
   };
 
   LiveScreen.PlayerImage.prototype.url = function(url){

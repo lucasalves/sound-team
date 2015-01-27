@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html ng-app="soundTeam">
 <head>
-  <title>SoundTeam</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title>SoundTeam - <%= yield(:title) %></title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= stylesheet_link_tag "application", media: "all", "http://fonts.googleapis.com/css?family=Roboto:400,700,300,500" => true %>
   <%= javascript_include_tag "http://localhost:1337/socket.io/socket.io.js" %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" %>
+  
   <%= csrf_meta_tags %>
 </head>
-<body>
-    <div id="layout-container">
-    
-    <div class="row">
-      <%= render partial: 'layouts/default/header' %>        
-    </div>  
-    <div id="main" class="row">
-      <%= render partial: 'layouts/default/sidebar' %>
-          
-      <div class="col-md-8 main-content <%= params[:controller] %>-page">
-        <%= yield %>
-      </div>
+<body class="nifty-ready pace-done">
+  <div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+      <div class="pace-progress-inner"></div>
     </div>
+    <div class="pace-activity"></div>
+  </div>
+  <div id="container" class="effect aside-in aside-fixed navbar-fixed mainnav-fixed mainnav-lg">
+    
+    <%= render :partial => 'layouts/default/header' %>
+
+    <div class="boxed">
+
+      <div id="content-container">
+        
+        <div id="page-title">
+          <h1 class="page-header text-overflow"><%= yield(:title) %></h1>
+
+          <div class="searchbox">
+            <div class="input-group custom-search-form">
+              <input type="text" class="form-control" placeholder="Search..">
+              <span class="input-group-btn">
+                <button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </div>
+        </div>
+    
+        <div id="page-content">          
+          <%= yield %>
+        </div>
+
+      </div>
+      
+      <%= render partial: "layouts/default/sidebar_left" %>
+      <%= render partial: "layouts/default/sidebar_right" %>
+
+    </div>
+    
+  <%= render partial: "layouts/default/footer"%>
+  
+  <%= javascript_include_tag "nifty/js/plugins.min.js" %>
+
+  <%= javascript_include_tag "nifty/js/demo/nifty-demo.min" %>
 </body>
 </html>

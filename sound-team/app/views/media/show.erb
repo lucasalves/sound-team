@@ -1,14 +1,17 @@
-<div class="show-media col-md-12 media">
-  <div class="pull-left col-md-3 screenshot">
-    <%= screenshot_by_kind(@media) %>
-  </div>
-  <div class="pull-left  col-md-6">
-    <%= render :partial => "buttons", :locals => {:item => @media} -%>
-    <div class="media-info"></div>
+<div class="panel">
+  <div class="panel-body show-media col-md-12 media">
+    <div class="pull-left col-md-3 screenshot">
+      <%= screenshot_by_kind(@media) %>
+    </div>
+    <div class="pull-left  col-md-6">
+      <%= render :partial => "buttons", :locals => {:item => @media} -%>
+      <div class="media-info"></div>
+    </div>
+    <div class="clear"></div>
+    <h1><%= @media.name %></h1>
+    <div class="legend">
+      <%= simple_format(@media.legend) %>
+    </div>
   </div>
   <div class="clear"></div>
-  <h1><%= @media.name %></h1>
-  <div class="legend">
-    <%= simple_format(@media.legend) %>
-  </div>
 </div>
