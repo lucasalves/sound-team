@@ -1,8 +1,10 @@
-app.controller('TimelinePlayer', ['$scope', function($scope){
+app.controller('TimelinePlayer', ['$scope', '$element', function($scope, $element){
 
   $scope.running = false;
   $scope.status  = {};
   $scope.playing = {};
+
+  $scope.btnControlClass = 'fa fa-play';
 
   //Add Event Listener
   (function(){
@@ -18,10 +20,21 @@ app.controller('TimelinePlayer', ['$scope', function($scope){
       $scope.updateTime(data);
     });
 
-    socket.on('ended play', function(data){
+    socket.on('play ended', function(data){
       $scope.endedPlay(data);
     });
 
+    socket.on('play media', function(data){
+      socket.emit('get current status', true);
+    });
+
+    socket.on('playing', function(){
+      $scope.playing.status = 'playing';
+    });
+
+    socket.on('paused', function(){
+      $scope.playing.status = 'paused';
+    });
 
     $scope.$on('play now', $scope.playNow);
   })();
@@ -43,16 +56,17 @@ app.controller('TimelinePlayer', ['$scope', function($scope){
    *   este método é chamado
    *
    * @param Object {
-   *   current_time: String,
-   *   current_percentage: Number,
+   *   currentTime: String,
+   *   currentPercentage: Number,
    *   end_forecast: String
    * }
    * 
    */
   $scope.updateTime = function(data){
-    $scope.playing.current_time       = data.current_time;
-    $scope.playing.current_percentage = data.current_percentage;
-    $scope.playing.end_forecast       = data.end_forecast;
+    $scope.playing.currentTime       = data.currentTime;
+    $scope.playing.currentPercentage = data.currentPercentage;
+    $scope.playing.duration          = data.duration;
+    // $scope.playing.end_forecast      = data.end_forecast;
 
     $scope.$apply();
   };
@@ -65,13 +79,10 @@ app.controller('TimelinePlayer', ['$scope', function($scope){
    * }
    * 
    */
-   $scope.endedPlay = function(data){
-      if(data.status !== 'ended'){
-        return;
-      }
-
+   $scope.endedPlay = function(){
+      console.log('???');
       $scope.setStatus({
-        status:  data.status,
+        status:  'ended',
         playing: {}
       });
    };
@@ -81,8 +92,8 @@ app.controller('TimelinePlayer', ['$scope', function($scope){
    * @description é executado quando a reprodução chega no fim
    * @param Object {
    *   status: String,
-   *   current_time: String,
-   *   current_percentage: Number,
+   *   currentTime: String,
+   *   currentPercentage: Number,
    *   midia: Object,
    *   initiated_in: String,
    *   end_forecast: String
@@ -90,36 +101,56 @@ app.controller('TimelinePlayer', ['$scope', function($scope){
    * 
    */
   $scope.setStatus = function(data){
-    if($inArray(data.status, ['playing', 'paused'] !== -1)){
+    if($.inArray(data.status, ['playing', 'paused'] !== -1)){
       $scope.running = true;
     }else{
       $scope.running = false;
     }
 
     $scope.status  = data;
-    $scope.playing = data.playing;
+    $scope.playing = data;
 
+    $scope.btnControl();
     $scope.$apply();
   };
 
+  $scope.btnControl = function(){
+    if($scope.playing && $scope.playing.status === 'playing'){
+      $scope.btnControlClass = 'fa fa-pause';
+      return;
+    }
+    $scope.btnControlClass = 'fa fa-play';
+  };
+
+  $scope.setTimeTo = function(event){
+    var offsetX    = event.offsetX
+      , width      = $element.find('.controls .progress').width()
+      , percentage = ((offsetX / width) * 100)
+      ;
+
+    socket.emit('set time to', {percentage: percentage});
+  };
+
+ /**
+  *
+  * @name Altera Status
+  * @description Altera o status do player 
+  * (se estiver em execução pausa caso contrario dá play)
+  * @return void
+  *
+  */
+  $scope.changeStatus = function(){
+    $scope.playing.status = (
+      $scope.playing.status === 'playing' ? 'paused' : 'playing'
+    );
+    $scope.btnControl();
+
+    socket.emit('set ' + $scope.playing.status);
+  };
 
   //Trigger init event
   (function(){
     socket.emit('get current status', true);
   }());
 
-
-  //Mock for dev
-  (function(){
-    $scope.status = true;
-
-    $scope.playing = {
-      status: 'playing',
-      current_time: '02.31',
-      current_percentage: 10, //10% (0 até 100)
-      midia: {"id":5,"name":"01 - Teu Santo Nome","description":null,"legend":"Todo ser que vive louve o nome do Senhor\nToda criatura se derrame aos Seus pés\nAo som da Sua voz o universo se desfaz\nNão há outro nome comparado ao Grande Eu Sou\n\nE mesmo sendo pó\nCom tudo que há em mim\nConfessarei:\nQue Céus e Terra passarão\nMas o Teu nome é Eterno\n\n(Refrão):\n\nTodo joelho dobrará\nAo ouvir Teu nome\nTeu Santo nome\nTodo ser confessará\nLouvado seja o Teu nome\nTeu Santo nome","format":"mp4","size":1592219,"path":"public/media/movies/2014/04/adoradores/teu_santo_nome.mp4","kind":"movie","created_at":"2014-04-23T02:27:09.806Z","updated_at":"2014-04-23T02:27:09.806Z","component_id":1,"album_id":null,"information":{"image":{"img_320x180":"/upload/screenshots/13e555886807357627c5ac981dfdb96a.png"}}},
-      initiated_in: '22:45:33',
-      end_forecast: '22:50:33'
-    };
-  }());
 }]);

@@ -82,13 +82,109 @@
 }
 
 .timeline-player{
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin-top: -10px;
+  margin-bottom: -20px;
   background: rgba(0,0,0,0.12);
-  /*border-bottom: 1px solid rgba(0,0,0,0.22);*/
-  /*border-top: 1px solid rgba(0,0,0,0.22);*/
+  position: relative;
+  height: 186px;
+}
+.timeline-player .media-info{
+  padding: 0;
+}
+.timeline-player .media-info .media-image{
+  overflow: hidden;
+  height: 150px;
+}
+.timeline-player .media-info .media-image img{
+  height: 100%;
 }
 
+.timeline-player .media-info .media-type{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 30px;
+  background: rgba(58, 65, 73, 0.5);
+  padding: 0px 10px 0px 7px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.timeline-player .media-info .media-play{
+  position: absolute;
+  top: 100px;
+  height: 50px;
+  background: rgba(58, 65, 73, 0.5);
+  width: 100%;
+  padding-left: 5px;
+}
+.timeline-player .media-info .media-play h4{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.timeline-player .controls{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.0em;
+  background-color: #07141e;
+  background-color: rgba(7, 20, 30, 0.7);
+}
+.timeline-player .controls .progress{
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(51, 51, 51, 0.9);
+}
+
+.timeline-player .controls .default-progress{
+  position: absolute;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  left: 0;
+  top: 0;
+}
+
+.timeline-player .controls .load-progress{
+  background: #646464;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-player .controls .load-progress{
+  background: #646464;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-player .controls .play-progress{
+  background: #66a8cc url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;
+}
+.timeline-player .controls .control-bar{
+}
+.timeline-player .controls .control-bar .play-control{
+  padding-left: 0px;
+  margin-top: 10px;
+  font-size: 1.2em;
+  width: 40px;
+  text-align: center;
+  padding-top: 4px;
+  height: 26px;
+  cursor: pointer;
+}
+.timeline-player .play-control:hover{
+  text-shadow: 0em 0em 1em #ffffff;
+}
+
+.timeline-player .controls .timer{
+  margin-left: 10px;
+  margin-top: 15px;
+}
+/*
 .timeline-player .media-image{
   width: 50px;
   height: 50px;
@@ -120,4 +216,4 @@
 
 .timeline-player .media-info{
   border-right: 1px solid rgba(0,0,0,0.22);
-}
+}*/

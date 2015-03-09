@@ -27,4 +27,20 @@ p "Created #{item_song.id}##{item_song.name}"
 
 item_song  = MenuItem.create({name: 'Songs', description: 'Pergo coctione, et ego.', icon: 'music', path: '/media/songs', component: component_music, menu: menu})
 p "Created #{item_song.id}##{item_song.name}"
+
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].each { |file| require file }
+
+timeline = Timeline.create({name: 'Sábado Culto divino', status: 1, used: 0});
+order = 1
+
+Media.all({:order => "RANDOM()"}).each do |item|
+  MediaHasTimeline.create({
+    timeline: timeline,
+    media: item,
+    name:  item.kind,
+    order: order
+  })
+
+  order += 1
+end
+p "Created Timeline: #{timeline.name}"

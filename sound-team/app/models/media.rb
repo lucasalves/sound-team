@@ -1,6 +1,9 @@
 class Media < ActiveRecord::Base
     serialize :information
 
+    has_many :media_has_timeline
+    has_many :timeline, :through => :media_has_timeline
+
     belongs_to :album
     belongs_to :component
     has_and_belongs_to_many :categories

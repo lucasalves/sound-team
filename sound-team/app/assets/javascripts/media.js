@@ -23,6 +23,8 @@ $(document).on('ready page:load', function(){
 
   Media.prototype.playNow = function(that){
     var data = $(that).closest('.item').data('media');
+
+    data.status = 'playing';
     this.socket.emit('play now', data);
   };
 

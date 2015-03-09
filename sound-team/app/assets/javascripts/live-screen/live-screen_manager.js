@@ -18,10 +18,9 @@
   };
 
   LiveScreen.Manager.prototype.delegate = function(data){
-    if(data){
-      this.player[data.kind].set(data);
+    if(data.media){
+      this.emitter.emit('change media', data.media.kind);
+      this.player[data.media.kind].set(data.media);
     }
   };
-
-
 }(LiveScreen));

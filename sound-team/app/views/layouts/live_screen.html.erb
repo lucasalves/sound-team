@@ -9,9 +9,11 @@
 </head>
 <body>
     <div id="layout_live-screen">
-      <div class="media-player" id="media-player">      
+      <div class="media-player" id="media-player-image"></div>
+      <div class="media-player" id="media-player-movie">
+        <video id="video-player" class="video-js vjs-default-skin" controls preload="none" data-setup="{}"></video>
       </div>
-      <video id="video-player" class="video-js vjs-default-skin" controls preload="none" data-setup="{}"></video>
+      <div class="media-player" id="media-player-song"></div>
       <%= render :partial => 'layouts/live_screen/loader' %>  
     </div>
 </body>

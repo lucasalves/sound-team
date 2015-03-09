@@ -24,19 +24,41 @@
         </ul>
 
         <div class="tab-content">
-          <div class="timeline-player" ng-controller="TimelinePlayer">
-            <div class="col-md-12">
-              <div class="pull-left media-info">
-                <div class="media-image">
-                  <img class="" ng-src="/upload/screenshots/bc4c589d15245638e20824f9b443c02a.jpg" alt="Profile Picture" src="/upload/screenshots/bc4c589d15245638e20824f9b443c02a.jpg">
-                </div>
-                <div class="media-type text-center">
-                  <i class="fa fa-song"></i>
-                </div>
+          <div class="timeline-player" ng-controller="TimelinePlayer" ng-show="playing.media">
+            <div class="col-md-12 media-info">
+              <div class="media-image">
+                <img class="" ng-src="{{playing.media.information.image['img_320x180']}}">
               </div>
-              <div class="pull-left media-play text-center">
-                <h4>01 - Breve Virá</h4>
-                <span class="album">CD Adoradores</span>
+              <div class="media-type">
+                <i class="fa fa-{{playing.media.kind}}"></i>
+              </div>
+              <div class="pull-left media-play">
+                <h4>{{playing.media.name}}</h4>
+                <span
+                  class="album"
+                  ng-if="playing.media.album"
+                >{{playing.media.album}}</span>
+              </div>
+            </div>
+            <div class="controls" ng-show="playing.media && playing.media.kind !== 'image'">
+              <div class="progress" ng-click="setTimeTo($event)">
+                <div 
+                  class="load-progress default-progress"
+                  style="width:{{playing.load_progress_percentage}}%"
+                ></div>
+                <div
+                  class="play-progress default-progress"
+                  style="width:{{playing.currentPercentage}}%"
+                ></div>
+              </div>
+              <div class="control-bar">
+                <div class="play-control pull-left" ng-click="changeStatus()">
+                  <i class="{{btnControlClass}}"></i>
+                </div>
+                <div class="timer pull-left">
+                  <span class="current">{{playing.currentTime}}</span> / 
+                  <span class="total">{{playing.duration}}</span>
+                </div>
               </div>
             </div>
             <div class="clear"></div>
@@ -75,6 +97,13 @@
 
             <div class="pad-all">
               <h4 class="pad-hor text-thin">Settings</h4>
+            </div>
+            <div clas="options">
+                <select ng-model="selectedTimeline" ng-chage="changeTimeline(selectedTimeline)">
+                  <option ng-repeat="timeline in timelines" value="{{timeline.id}}">
+                    {{timeline.name}}
+                  </option>
+                </select>
             </div>
           </div>
         </div>

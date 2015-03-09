@@ -1,4 +1,4 @@
-(function(LiveScreen, $){
+(function(LiveScreen){
   LiveScreen.Player = function(html, emitter){
     this.html    = html;
     this.emitter = emitter;

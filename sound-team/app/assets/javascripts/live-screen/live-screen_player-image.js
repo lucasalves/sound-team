@@ -1,7 +1,12 @@
 (function(LiveScreen){
   LiveScreen.PlayerImage = function(html, emitter){
-    this.html    = html.find('.media-player');
+    this.html    = html.find('#media-player-image');
     this.emitter = emitter;
+    this.addEventListener();
+  };
+
+  LiveScreen.PlayerImage.prototype.addEventListener = function(kind){
+    this.emitter.on('change media', $.proxy(this, 'clear'));
   };
 
   LiveScreen.PlayerImage.prototype.set = function(data){
@@ -29,12 +34,18 @@
     });
   };
 
-  LiveScreen.PlayerImage.prototype.setView = function(type){
-    this.html.attr('id', type);
+  LiveScreen.PlayerImage.prototype.setView = function(type){     
+    this.html.closest('div').find('.media-player').fadeOut();
+    this.html.fadeIn();
   };
 
   LiveScreen.PlayerImage.prototype.url = function(url){
     return 'http://localhost:3000' + url.replace('public', '');
   };
 
+  LiveScreen.PlayerImage.prototype.clear = function(kind){
+    if(kind !== 'image'){
+      this.html.fadeOut().css('background-image', '');
+    }
+  };
 }(LiveScreen));
