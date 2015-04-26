@@ -8,6 +8,8 @@ class Media < ActiveRecord::Base
     belongs_to :component
     has_and_belongs_to_many :categories
 
+    update_index('media') { self }
+
     validates :name, :format, :size, :path, :kind, :album, presence: true
 
     before_create :create_screenshot

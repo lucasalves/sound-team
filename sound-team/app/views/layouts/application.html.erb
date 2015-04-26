@@ -27,7 +27,7 @@
         <div id="page-title">
           <h1 class="page-header text-overflow"><%= yield(:title) %></h1>
 
-          <div class="searchbox">
+          <div class="searchbox" ng-controller="MediaSearch">
             <div class="input-group custom-search-form">
               <input type="text" class="form-control" placeholder="Search..">
               <span class="input-group-btn">
@@ -53,5 +53,6 @@
   <%= javascript_include_tag "nifty/js/plugins.min.js" %>
 
   <%= javascript_include_tag "nifty/js/demo/nifty-demo.min" %>
+  <%= render partial: "layouts/default/search" %>
 </body>
 </html>

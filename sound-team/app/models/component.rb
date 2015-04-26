@@ -1,5 +1,7 @@
 class Component < ActiveRecord::Base
-    has_many :media
+  has_many :media
 
-    validates :name, presence: true, uniqueness: true
+  update_index('media') { media }
+
+  validates :name, presence: true, uniqueness: true
 end

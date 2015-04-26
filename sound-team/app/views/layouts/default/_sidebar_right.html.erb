@@ -7,13 +7,13 @@
           <li class="active">
             <a href="#timeline" data-toggle="tab">
               <i class="fa fa-filter"></i>
-              <span class="badge badge-info">7</span>
+              <span class="badge badge-info">{{items.length}}</span>
             </a>
           </li>
           <li>
             <a href="#timeline-played" data-toggle="tab">
               <i class="fa fa-play"></i>
-              <span class="badge badge-warning">2</span>
+              <span class="badge badge-warning">{{played.length}}</span>
             </a>
           </li>
           <li>
@@ -69,7 +69,7 @@
               Timeline
             </h4>
 
-            <div class="list-group bg-trans" ng-repeat="item in items">
+            <div class="list-group bg-trans" ng-repeat="item in items track by $index" ng-click="play(item)">
               <a href="#" class="list-group-item">
                 <div class="media-left" ng-if="image(item)">
                   <img class="img-circle img-xs" ng-src='{{image(item)}}' alt="Profile Picture">
@@ -99,7 +99,7 @@
               <h4 class="pad-hor text-thin">Settings</h4>
             </div>
             <div clas="options">
-                <select ng-model="selectedTimeline" ng-chage="changeTimeline(selectedTimeline)">
+                <select ng-model="selectedTimeline" ng-change="changeTimeline(selectedTimeline)">
                   <option ng-repeat="timeline in timelines" value="{{timeline.id}}">
                     {{timeline.name}}
                   </option>

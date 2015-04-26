@@ -8,35 +8,37 @@ app.controller('TimelinePlayer', ['$scope', '$element', function($scope, $elemen
 
   //Add Event Listener
   (function(){
-    socket.on('current status', function(data){
+    app.socket.on('current status', function(data){
       $scope.setStatus(data);
     });
 
-    socket.on('player at', function(data){
+    app.socket.on('player at', function(data){
       $scope.setStatus(data);
     });
 
-    socket.on('update time', function(data){
+    app.socket.on('update time', function(data){
       $scope.updateTime(data);
     });
 
-    socket.on('play ended', function(data){
+    app.socket.on('play ended', function(data){
       $scope.endedPlay(data);
     });
 
-    socket.on('play media', function(data){
-      socket.emit('get current status', true);
+    app.socket.on('play media', function(data){
+      app.socket.emit('get current status', true);
     });
 
-    socket.on('playing', function(){
+    app.socket.on('playing', function(){
       $scope.playing.status = 'playing';
     });
 
-    socket.on('paused', function(){
+    app.socket.on('paused', function(){
       $scope.playing.status = 'paused';
     });
 
-    $scope.$on('play now', $scope.playNow);
+    $scope.$on('play now', function(e, media){
+      $scope.playNow(media);
+    });
   })();
 
 
@@ -46,7 +48,7 @@ app.controller('TimelinePlayer', ['$scope', '$element', function($scope, $elemen
    * @param Object (media)
    */
   $scope.playNow = function(media){
-    socket.emit('play now', media);
+    app.socket.emit('play now', media);
   };
 
   /**
@@ -128,7 +130,7 @@ app.controller('TimelinePlayer', ['$scope', '$element', function($scope, $elemen
       , percentage = ((offsetX / width) * 100)
       ;
 
-    socket.emit('set time to', {percentage: percentage});
+    app.socket.emit('set time to', {percentage: percentage});
   };
 
  /**
@@ -145,12 +147,12 @@ app.controller('TimelinePlayer', ['$scope', '$element', function($scope, $elemen
     );
     $scope.btnControl();
 
-    socket.emit('set ' + $scope.playing.status);
+    app.socket.emit('set ' + $scope.playing.status);
   };
 
   //Trigger init event
   (function(){
-    socket.emit('get current status', true);
+    app.socket.emit('get current status', true);
   }());
 
 }]);

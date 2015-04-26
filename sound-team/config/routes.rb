@@ -2,13 +2,16 @@ SoundTeam::Application.routes.draw do
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
 
-  get "media/:kind" => 'media#index', as: :media, constraints: { kind: /images|movies|songs/ }
-  get "medias"      => 'media#index'
+  get "media/:kind"  => 'media#index', as: :media, constraints: { kind: /images|movies|songs/ }
+  get "media/search" => 'media#search'
+  get "medias"       => 'media#index'
 
   get "live-screen"        => 'live_screen#index'
   get "live-screen/helper" => 'live_screen#helper'
 
   resources :media
+
+  get "timeline/:id/items" => 'timeline#items'
   resources :timeline
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,18 +5,23 @@ $(document).on('ready page:load', function(){
   };
 
   Media.prototype.addEventListener = function() {
-    this.html.find('.item').hover(function(){
-      $(this).addClass('on-set');      
-    }, function(){
-      $(this).removeClass('on-set');
-    });
+    this.html.on({
+        mouseenter: function(){
+          $(this).addClass('on-set');      
+        }, 
+        mouseleave: function(){
+          $(this).removeClass('on-set');
+        }
+      },
+      '.item'
+    );
 
     if(this.html.length){
       this.socket = io.connect('http://localhost:1337/player');
     }
 
     var self = this;
-    this.html.find('.share-now').on('click', function(){
+    this.html.on('click', '.share-now', function(){
       self.playNow(this);
     });
   };

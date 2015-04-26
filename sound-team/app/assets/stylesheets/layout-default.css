@@ -74,3 +74,67 @@ p {
   font-weight: 100;
   font-size: 16px;
 }
+
+.page-search-full{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  background: #FFFFFF;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+.page-search{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  overflow: auto;
+}
+
+.page-search .close-search{
+  opacity: 0.6;
+  font-size: 60px;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  cursor: pointer;
+}
+.page-search{
+  padding-top: 70px;
+}
+
+.search-box{
+  display: none;
+}
+
+.search-box input{
+  font-size: 50px;
+  font-weight: 100;
+  height: 80px;
+  border: 1px solid rgb(47, 52, 59);
+  color: rgb(47, 52, 59);
+  padding-right: 60px;
+}
+.search-box input:focus{
+  border: 1px solid rgb(66, 70, 76);
+}
+.page-search h1 {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  font-size: 70px;
+  background-color: rgb(47, 52, 59);
+  padding: 10px;
+  color: #FFFFFF;
+}
+.page-search form{
+  margin-top: 40px;
+}
+.mode-search{
+  overflow: hidden;
+}

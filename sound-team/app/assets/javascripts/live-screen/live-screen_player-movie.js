@@ -9,9 +9,9 @@
   LiveScreen.PlayerMovie.prototype.addEventListener = function(kind){
     this.emitter.on('change media', $.proxy(this, 'clear'));
 
-    socket.on('paused',  $.proxy(this, 'pause'));
-    socket.on('playing', $.proxy(this, 'play'));
-    socket.on('update time to', $.proxy(this, 'setTimeTo'));
+    app.socket.on('paused',  $.proxy(this, 'pause'));
+    app.socket.on('playing', $.proxy(this, 'play'));
+    app.socket.on('update time to', $.proxy(this, 'setTimeTo'));
   };
 
   LiveScreen.PlayerMovie.prototype.set = function(media){
@@ -78,14 +78,14 @@
   };
 
   LiveScreen.PlayerMovie.prototype.updateTime = function(progress){
-    socket.emit('set update time', {
+    app.socket.emit('set update time', {
       currentTime : progress.currentTarget.currentTime,
       duration    : progress.currentTarget.duration
     });
   };
 
   LiveScreen.PlayerMovie.prototype.ended = function(){
-    socket.emit('ended');
+    app.socket.emit('ended');
   };
 
   LiveScreen.PlayerMovie.prototype.soundOut = function(addEventListener){

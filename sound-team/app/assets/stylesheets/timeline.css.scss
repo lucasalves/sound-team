@@ -1,3 +1,9 @@
 .timeline-page.main-content{
   background: none;
 }
+
+#timeline{
+  height: 500px;
+  overflow: scroll !important;
+  position: relative;
+}
